@@ -37,7 +37,7 @@ module matrix_mod
     end function trans
     
     function eye(x) result(r)
-        ! Returns an n x n identity matrix
+        ! Returns an identity matrix the same size as x
         real(dp)    :: x(:,:), r(size(x, 1), size(x, 2))
         integer     :: i,n
         

@@ -28,6 +28,8 @@
         c=trans(b)
         call print_matrix(c)
         
+        
+        ! create identity matrix
         d=eye(d)
         call print_matrix(d)
         
