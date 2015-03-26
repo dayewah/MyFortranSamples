@@ -1,0 +1,15 @@
+<NotepadPlus>
+    <Project name="fortran_samples">
+        <Folder name="matrix">
+            <File name="main.f90" />
+            <File name="matrix.f90" />
+            <File name="matrix.vfproj" />
+            <File name="ReadMe.txt" />
+            <File name="types.f90" />
+            <File name="types.mod" />
+            <File name="types.obj" />
+        </Folder>
+        <File name="C:\Users\dayewah\Documents\Training\FORTRAN\Programing\MyFortranSamples\.gitignore" />
+        <File name=".sln" />
+    </Project>
+</NotepadPlus>

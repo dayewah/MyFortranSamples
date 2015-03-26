@@ -36,13 +36,12 @@ module matrix_mod
         
     end function trans
     
-    function eye(x) result(r)
-        ! Returns an identity matrix the same size as x
-        real(dp)    :: x(:,:), r(size(x, 1), size(x, 2))
+    function eye(n) result(r)
+        ! Returns an n x n identity matrix
+        real(dp)    :: r(n,n)
         integer     :: i,n
         
-        r=0
-        n=size(x,1)
+        r=0        
         do i=1,n
             r(i,i)=1
         end do
@@ -51,21 +50,19 @@ module matrix_mod
     
     subroutine print_matrix(mat)
         ! Prints a matrix row by row
-        real(dp), intent(in)    :: mat(:,:)
-        integer                 :: i,n,m
-        !character(len=*)        :: o_format, fmt
+        real(dp), intent(in)    	:: mat(:,:)
+        integer                 	:: i,n,m
+        character(len=8)        	:: current_format
+		!character(len=*),optional	:: o_format
         
-        !if(.NOT. present(o_format)) fmt='(<m>f8.2)'
-        
-        n=size(mat,1)
+		n=size(mat,1)
         m=size(mat,2)
-        
+		        
         write(*,*)
         
         do i=1,n
-            write(*,'(<m>f8.2)') mat(i,:)
-        end do
-        
+            write(*,'(<m>f8.3)') mat(i,:)
+        end do        
         
     end subroutine print_matrix
 

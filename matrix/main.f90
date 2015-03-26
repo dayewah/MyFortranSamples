@@ -18,9 +18,11 @@
 
         implicit none
         
-        real(dp)::a, b(3,3),c(3,3), d(3,3)
-        
-        print *, 'Matrix Functions'
+        real(dp)				:: a, b(3,3),c(3,3)
+		real(dp), allocatable	:: d(:,:)
+        integer					:: n
+		
+        print *, '*********Matrix Functions*********'
         
         !transpose a matrix
         b=reshape((/1.,1.,0.,0.,2.,2.,1.,2.,3./),(/3,3/))
@@ -30,9 +32,12 @@
         
         
         ! create identity matrix
-        d=eye(d)
+		n=4
+		allocate(real(dp) :: d(n,n))
+        d=eye(n)
         call print_matrix(d)
         
+		
         read(*,*)
     end program main
 
