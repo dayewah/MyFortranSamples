@@ -6,9 +6,9 @@
 !
 module matrix_mod
 
-    implicit none
+    use types, only:dp
     
-    integer,parameter :: dp = selected_real_kind(p=15,r=307)
+    implicit none
     
     contains
     
@@ -35,6 +35,19 @@ module matrix_mod
         end do
         
     end function trans
+    
+    function eye(x) result(r)
+        ! Returns an n x n identity matrix
+        real(dp)    :: x(:,:), r(size(x, 1), size(x, 2))
+        integer     :: i,n
+        
+        r=0
+        n=size(x,1)
+        do i=1,n
+            r(i,i)=1
+        end do
+        
+    end function eye
     
     subroutine print_matrix(mat)
         ! Prints a matrix row by row

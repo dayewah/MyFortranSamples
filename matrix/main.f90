@@ -18,7 +18,7 @@
 
         implicit none
         
-        real(dp)::a, b(3,3),c(3,3)
+        real(dp)::a, b(3,3),c(3,3), d(3,3)
         
         print *, 'Matrix Functions'
         
@@ -28,7 +28,9 @@
         c=trans(b)
         call print_matrix(c)
         
-        read(*,*)
+        d=eye(d)
+        call print_matrix(d)
         
+        read(*,*)
     end program main
 
